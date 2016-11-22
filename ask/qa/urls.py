@@ -8,6 +8,7 @@ urlpatterns = patterns('qa.views',
     # url(r'^$', 'ask.views.home', name='home'),
     # url(r'^blog/', include('blog.urls')),
 
+    url(r'^$', 'test', name='index'),
     url(r'^login/', 'test', name='login'),
     url(r'^signup/', 'test', name='signup'),
     url(r'^question/(?P<id>\d+)/', 'test', name='question'),
