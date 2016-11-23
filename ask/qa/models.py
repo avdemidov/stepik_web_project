@@ -14,9 +14,9 @@ class Question(models.Model):
     rating = models.IntegerField(default=0)
     author = models.ForeignKey(User, blank=True, null=True, on_delete=models.SET_NULL)
     likes = models.ManyToManyField(User, related_name='likes')
-    manager = QuestionManager()
-    new = manager.new()
-    popular = manager.popular()
+    objects = QuestionManager()
+    new = objects.new()
+    popular = objects.popular()
     
 
 class Answers(models.Model):
