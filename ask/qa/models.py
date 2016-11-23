@@ -19,7 +19,7 @@ class Question(models.Model):
     popular = objects.popular()
     
 
-class Answers(models.Model):
+class Answer(models.Model):
     text = models.TextField()
     added_at = models.DateTimeField(auto_now_add=True)
     question = models.ForeignKey(Question, on_delete=models.CASCADE)
