@@ -5,8 +5,8 @@
 {% if questions %}
 
 	{% for question in questions %}
-	<h3>{{ question.title }}</h3>0
-	<p><a href="/">link on index page</a></p>
+	<h3>{{ question.title }}</h3>
+	<p><a href="{{ paginator.baseurl }}/question/{{ question.id }}/">{{ paginator.baseurl }}/question/{{ question.id }}/</a></p>
 	{% endfor %}
 
 {% else %}
@@ -14,6 +14,12 @@
 	<p>There are no questions.</p>
 	
 {% endif %}
-
+	<nav>
+	<ul>
+	{% for page_number in paginator.page_range %}
+    <li><a href="{{ paginator.baseurl }}?page={{ page_number }}">{{ page_number }}</a></li>
+	{% endfor %}
+	</ul>
+	</nav>
 
 {% endblock %}
