@@ -4,7 +4,7 @@ from django.core.urlresolvers import reverse
 
 class QuestionManager(models.Manager):
     def new(self):
-        return super(QuestionManager, self).get_query_set().order_by('-added_at')
+        return super(QuestionManager, self).get_query_set().order_by('-id')
 
     def popular(self):
         return super(QuestionManager, self).get_query_set().order_by('-rating')
